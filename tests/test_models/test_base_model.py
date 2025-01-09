@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/python3
 """Defines unittests for models/base_model.py.
 Unittest classes:
@@ -189,3 +190,35 @@ class TestBaseModel_to_dict(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+=======
+import unittest
+from models.base_model import BaseModel
+from datetime import datetime
+
+class TestBaseModel(unittest.TestCase):
+
+    def test_instance_creation(self):
+        """Test if an instance of BaseModel is created successfully"""
+        obj = BaseModel()
+        self.assertIsInstance(obj, BaseModel)  # Check if obj is an instance of BaseModel
+
+    def test_to_dict(self):
+        """Test the to_dict method"""
+        obj = BaseModel()
+        dict_repr = obj.to_dict()
+        self.assertIsInstance(dict_repr, dict)  # Check if to_dict returns a dictionary
+        self.assertIn("id", dict_repr)  # Ensure 'id' is in the dictionary representation
+        self.assertIn("created_at", dict_repr)  # Ensure 'created_at' is in the dictionary
+        self.assertIn("updated_at", dict_repr)  # Ensure 'updated_at' is in the dictionary
+
+    def test_save(self):
+        """Test the save method"""
+        obj = BaseModel()
+        initial_updated_at = obj.updated_at
+        obj.save()  # Call save to update the instance
+        self.assertGreater(obj.updated_at, initial_updated_at)  # Check if updated_at is updated
+
+if __name__ == '__main__':
+    unittest.main()
+
+>>>>>>> test and models
