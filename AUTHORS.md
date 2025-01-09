@@ -6,4 +6,4 @@
 
 ## Contributors:
 - Precious Chibundu Mozia <chibundumozia@gmail.com>
-- Contributor Name 2 <contributor2@example.com>
+- Glory Paul <g.paul@alustudent.com>
