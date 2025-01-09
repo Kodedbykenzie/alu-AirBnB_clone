@@ -1,7 +1,6 @@
-import json
-
 class FileStorage:
     """Handles serialization and deserialization of objects"""
+
     __file_path = "file.json"
     __objects = {}
 
